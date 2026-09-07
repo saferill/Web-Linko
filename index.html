@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Linko — Ultra-Fast & Secure Local File Sharing</title>
+  <meta name="description" content="Linko is a modern, ultra-fast, and secure cross-platform local file sharing solution for Android and Windows.">
+  <link rel="icon" type="image/png" href="assets/logo-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       Material 3 Top App Bar
+       ======================================================================== -->
+  <header class="top-app-bar">
+    <div class="container">
+      <div class="nav-left">
+        <a href="#" class="brand-link">
+          <img src="assets/logo-icon.png" alt="Linko Logo">
+          <span>Linko</span>
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="#download" data-i18n="nav_downloads">Downloads</a></li>
+          <li><a href="#features" data-i18n="nav_features">Features</a></li>
+          <li><a href="#how-it-works" data-i18n="nav_how_it_works">How It Works</a></li>
+          <li><a href="#faq" data-i18n="nav_faq">FAQ</a></li>
+          <li><a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-actions">
+        <button id="theme-toggle" class="m3-icon-btn" aria-label="Toggle theme">
+          <span class="material-symbols-outlined" id="theme-icon">light_mode</span>
+        </button>
+
+        <!-- Material 3 Language Filter Chip -->
+        <div class="lang-switcher">
+          <button id="lang-btn" class="m3-chip-btn" aria-label="Select language">
+            <span id="current-lang-text">English</span>
+            <span class="material-symbols-outlined" style="font-size: 18px;">keyboard_arrow_down</span>
+          </button>
+          <div id="lang-dropdown" class="lang-dropdown">
+            <div class="lang-item active" data-lang="en">
+              <span class="lang-name">English</span>
+            </div>
+            <div class="lang-item" data-lang="id">
+              <span class="lang-name">Bahasa Indonesia</span>
+            </div>
+          </div>
+        </div>
+
+        <a href="#download" class="m3-btn m3-btn-filled m3-btn-sm">
+          <span class="material-symbols-outlined" style="font-size: 18px;">download</span>
+          <span data-i18n="nav_download_btn">Download</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ========================================================================
+         Hero Section (Using Authentic Linko App Description)
+         ======================================================================== -->
+    <section class="hero section">
+      <div class="container text-center">
+
+        <h1 data-i18n="hero_h1">
+          A modern, ultra-fast, and secure<br>
+          <span class="accent">cross-platform file sharing solution.</span>
+        </h1>
+        
+        <p class="subtitle" data-i18n="hero_subtitle">
+          Linko allows you to securely share files and messages with nearby devices over your local network without needing an internet connection. Free, open source, and built with Material Design 3.
+        </p>
+
+        <!-- Material 3 Flutter App Mockup Window -->
+        <div class="hero-visual">
+          <div class="m3-app-window">
+            <div class="m3-window-header">
+              <div class="m3-window-title">
+                <span class="material-symbols-outlined accent">radar</span>
+                <span data-i18n="mockup_title">Nearby Devices</span>
+              </div>
+              <div class="m3-window-status">
+                <span class="pulse-dot"></span>
+                <span data-i18n="mockup_status">Ready to receive</span>
+              </div>
+            </div>
+
+            <div class="m3-list">
+              <div class="m3-list-tile">
+                <div class="m3-avatar">
+                  <span class="material-symbols-outlined">smartphone</span>
+                </div>
+                <div class="m3-tile-content">
+                  <div class="title" data-i18n="mockup_dev1">Quick Galaxy (Android)</div>
+                  <div class="subtitle" data-i18n="mockup_dev1_sub">192.168.1.104 • Local Wi-Fi</div>
+                </div>
+                <span class="m3-chip" data-i18n="mockup_ready">Ready</span>
+              </div>
+
+              <div class="m3-list-tile">
+                <div class="m3-avatar">
+                  <span class="material-symbols-outlined">laptop_windows</span>
+                </div>
+                <div class="m3-tile-content">
+                  <div class="title" data-i18n="mockup_dev2">Quiet Laptop (Windows)</div>
+                  <div class="subtitle" data-i18n="mockup_dev2_sub">192.168.1.120 • Local Wi-Fi</div>
+                </div>
+                <span class="m3-chip" data-i18n="mockup_ready">Ready</span>
+              </div>
+
+              <div class="m3-list-tile active">
+                <div class="m3-avatar">
+                  <span class="material-symbols-outlined">sync</span>
+                </div>
+                <div class="m3-tile-content">
+                  <div class="title" data-i18n="mockup_dev3">Sending 3 files (142.8 MB)</div>
+                  <div class="subtitle" data-i18n="mockup_dev3_sub">To Quiet Laptop • 48.2 MB/s</div>
+                </div>
+                <span class="m3-chip highlight">92%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         Stats Section (M3 Tonal Container)
+         ======================================================================== -->
+    <section class="section" style="padding: 20px 0 40px;">
+      <div class="container">
+        <div class="stats-container">
+          <div class="stat-item">
+            <span class="stat-value">100%</span>
+            <span class="stat-label" data-i18n="stat_foss">Free & Open Source</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">0 MB</span>
+            <span class="stat-label" data-i18n="stat_data">Internet Data Used</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">100+ MB/s</span>
+            <span class="stat-label" data-i18n="stat_speed">Local Wi-Fi Throughput</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">0</span>
+            <span class="stat-label" data-i18n="stat_ads">Ads or Trackers</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         Features Section (Material 3 Cards)
+         ======================================================================== -->
+    <section id="features" class="section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="m3-section-tag" data-i18n="features_tag">Features</span>
+          <h2 class="section-title" data-i18n="features_title">Designed for simplicity and speed</h2>
+          <p class="section-subtitle" data-i18n="features_subtitle">Everything you need to share files peer-to-peer across your devices.</p>
+        </div>
+
+        <div class="grid-4">
+          <div class="m3-card">
+            <div class="m3-card-icon">
+              <span class="material-symbols-outlined">devices</span>
+            </div>
+            <h3 data-i18n="feat1_title">Cross-platform</h3>
+            <p data-i18n="feat1_desc">Seamless file transfer between Android and Windows with smooth protocol interoperability.</p>
+          </div>
+
+          <div class="m3-card">
+            <div class="m3-card-icon">
+              <span class="material-symbols-outlined">lock</span>
+            </div>
+            <h3 data-i18n="feat2_title">End-to-End Secure</h3>
+            <p data-i18n="feat2_desc">Direct peer-to-peer transmission secured with local TLS certificates. Zero cloud relays.</p>
+          </div>
+
+          <div class="m3-card">
+            <div class="m3-card-icon">
+              <span class="material-symbols-outlined">wifi_off</span>
+            </div>
+            <h3 data-i18n="feat3_title">No Internet Required</h3>
+            <p data-i18n="feat3_desc">Works completely offline over Wi-Fi or portable hotspot without consuming cellular quota.</p>
+          </div>
+
+          <div class="m3-card">
+            <div class="m3-card-icon">
+              <span class="material-symbols-outlined">bolt</span>
+            </div>
+            <h3 data-i18n="feat4_title">Blazingly Fast</h3>
+            <p data-i18n="feat4_desc">Transfer files at the maximum throughput of your local router with zero compression loss.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         How It Works (Material 3 Steps)
+         ======================================================================== -->
+    <section id="how-it-works" class="section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="m3-section-tag" data-i18n="workflow_tag">Workflow</span>
+          <h2 class="section-title" data-i18n="workflow_title">How it works</h2>
+          <p class="section-subtitle" data-i18n="workflow_subtitle">No accounts, no registration, no cloud servers.</p>
+        </div>
+
+        <div class="steps-grid">
+          <div class="m3-step-card">
+            <div class="m3-step-num">1</div>
+            <h3 data-i18n="step1_title">Install & Open</h3>
+            <p data-i18n="step1_desc">Open Linko on both devices connected to the same Wi-Fi network.</p>
+          </div>
+
+          <div class="m3-step-card">
+            <div class="m3-step-num">2</div>
+            <h3 data-i18n="step2_title">Select Files</h3>
+            <p data-i18n="step2_desc">Choose photos, high-res videos, folders, documents, or APK apps.</p>
+          </div>
+
+          <div class="m3-step-card">
+            <div class="m3-step-num">3</div>
+            <h3 data-i18n="step3_title">Tap to Send</h3>
+            <p data-i18n="step3_desc">Select the nearby device from the radar. Files transfer instantly.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         Downloads Section (Material 3 Segmented Control & Clean Cards)
+         ======================================================================== -->
+    <section id="download" class="section">
+      <div class="container text-center">
+        <div class="section-header">
+          <span class="m3-section-tag" data-i18n="dl_tag">Download</span>
+          <h2 class="section-title" data-i18n="dl_title">Get Linko for your platform</h2>
+          <p class="section-subtitle" data-i18n="dl_subtitle">Official release builds for Windows and Android.</p>
+        </div>
+
+        <!-- M3 Segmented Buttons -->
+        <div class="m3-segmented-control" role="tablist">
+          <button class="m3-segment-btn active" data-target="tab-windows" role="tab" aria-selected="true">
+            <span class="material-symbols-outlined" style="font-size: 20px;">desktop_windows</span>
+            <span data-i18n="dl_tab_win">Windows</span>
+          </button>
+          <button class="m3-segment-btn" data-target="tab-android" role="tab" aria-selected="false">
+            <span class="material-symbols-outlined" style="font-size: 20px;">android</span>
+            <span data-i18n="dl_tab_and">Android</span>
+          </button>
+        </div>
+
+        <!-- Windows Tab Pane -->
+        <div id="tab-windows" class="download-tab-pane active text-left">
+          <div class="m3-downloads-panel">
+            <div class="m3-panel-header">
+              <span class="material-symbols-outlined platform-icon">desktop_windows</span>
+              <div>
+                <h3 data-i18n="dl_win_title">Windows (64-bit)</h3>
+                <p data-i18n="dl_win_desc">Desktop installer with system tray background support.</p>
+              </div>
+            </div>
+
+            <div class="m3-download-list">
+              <a href="downloads/windows/Linko-v1.0.0-Windows-x64-Setup.exe" download class="m3-download-card highlight">
+                <span class="name" data-i18n="dl_win_btn">EXE (Installer)</span>
+                <span class="material-symbols-outlined dl-icon">download</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Android Tab Pane -->
+        <div id="tab-android" class="download-tab-pane text-left">
+          <div class="m3-downloads-panel">
+            <div class="m3-panel-header">
+              <span class="material-symbols-outlined platform-icon">android</span>
+              <div>
+                <h3 data-i18n="dl_and_title">Android</h3>
+                <p data-i18n="dl_and_desc">Direct install packages for Android 5.0 and newer.</p>
+              </div>
+            </div>
+
+            <div class="m3-download-list">
+              <a href="downloads/android/Linko-v1.0.0-arm64-v8a-Release.apk" download class="m3-download-card highlight">
+                <span class="name" data-i18n="dl_and_btn1">APK</span>
+                <span class="material-symbols-outlined dl-icon">download</span>
+              </a>
+
+              <a href="downloads/android/Linko-v1.0.0-armeabi-v7a-Release.apk" download class="m3-download-card">
+                <span class="name" data-i18n="dl_and_btn2">APK (ARMv7)</span>
+                <span class="material-symbols-outlined dl-icon">download</span>
+              </a>
+
+              <a href="downloads/android/Linko-v1.0.0-x86_64-Release.apk" download class="m3-download-card">
+                <span class="name" data-i18n="dl_and_btn3">APK (x86_64)</span>
+                <span class="material-symbols-outlined dl-icon">download</span>
+              </a>
+
+              <a href="downloads/android/Linko-v1.0.0-FOSS-arm64-Release.apk" download class="m3-download-card">
+                <span class="name" data-i18n="dl_and_btn4">APK (FOSS)</span>
+                <span class="material-symbols-outlined dl-icon">download</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         FAQ Section (Material 3 Cards)
+         ======================================================================== -->
+    <section id="faq" class="section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="m3-section-tag" data-i18n="faq_tag">FAQ</span>
+          <h2 class="section-title" data-i18n="faq_title">Frequently Asked Questions</h2>
+          <p class="section-subtitle" data-i18n="faq_subtitle">Common questions about Linko and local sharing.</p>
+        </div>
+
+        <div class="faq-grid">
+          <div class="m3-faq-card">
+            <h3 data-i18n="faq1_q">Is Linko free and open-source?</h3>
+            <p data-i18n="faq1_a">Yes, Linko is 100% free and open source under Apache 2.0. There are zero advertisements, trackers, or hidden fees.</p>
+          </div>
+
+          <div class="m3-faq-card">
+            <h3 data-i18n="faq2_q">Does it use my cellular data?</h3>
+            <p data-i18n="faq2_a">No. Linko strictly communicates over your local area network (LAN/Wi-Fi or mobile hotspot). Internet bandwidth is never touched.</p>
+          </div>
+
+          <div class="m3-faq-card">
+            <h3 data-i18n="faq3_q">Is my data transfer secure?</h3>
+            <p data-i18n="faq3_a">Yes. All transmissions use peer-to-peer TLS encryption certificates directly between the two devices.</p>
+          </div>
+
+          <div class="m3-faq-card">
+            <h3 data-i18n="faq4_q">Where are received files stored?</h3>
+            <p data-i18n="faq4_a">By default, files are saved to your system's default Downloads folder. You can configure the destination in Settings.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       Footer (Material 3 Style)
+       ======================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="brand-link">
+            <img src="assets/logo-icon.png" alt="Linko Logo">
+            <span>Linko</span>
+          </a>
+          <p data-i18n="footer_desc">Linko is a modern, ultra-fast, and secure cross-platform file sharing solution.</p>
+        </div>
+
+        <div class="footer-links-group">
+          <div class="footer-col">
+            <h4 data-i18n="footer_product">Product</h4>
+            <ul>
+              <li><a href="#download" data-i18n="nav_downloads">Download</a></li>
+              <li><a href="#features" data-i18n="nav_features">Features</a></li>
+              <li><a href="#how-it-works" data-i18n="nav_how_it_works">How It Works</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4 data-i18n="footer_platform">Platform</h4>
+            <ul>
+              <li><a href="#download">Android (APK)</a></li>
+              <li><a href="#download">Windows Setup</a></li>
+              <li><a href="#download">FOSS Edition</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4 data-i18n="footer_legal">Legal</h4>
+            <ul>
+              <li><a href="#">Apache License 2.0</a></li>
+              <li><a href="#" data-i18n="footer_privacy">Privacy Policy</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 saferill • Licensed under Apache License 2.0</div>
+        <div data-i18n="footer_credits">Built with Google Material Design 3 (Material You)</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
