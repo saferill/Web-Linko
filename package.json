@@ -1,0 +1,11 @@
+﻿{
+    "name":  "linko-web",
+    "version":  "1.0.0",
+    "main":  "server.js",
+    "scripts":  {
+                    "start":  "node server.js",
+                    "dev":  "node server.js"
+                },
+    "author":  "saferill",
+    "license":  "Apache-2.0"
+}
